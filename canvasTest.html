@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RouteMemory</title>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>-->
+    <script src="jquery.js"></script>
+    <script src="simplify.js"></script>
+    <script src="routeMemory.js"></script>
+    <script>
+        var maps = ["testMap.png", "testMap2.jpg"];
+    </script>
+ 
+    <style type="text/css">
+    canvas { border: 1px solid black; }
+    .make-your-route{
+        width: 960px;
+        border: 1px solid grey;
+    }
+    .b-canvas-wrapper {
+        position: relative;
+        border: 0;
+        height: 100%;
+        width: 800px;
+        margin: 0 auto;
+    }
+      
+    #map {
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #course {
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+      
+    #path {
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    ul.mapsList {
+        display: inline;
+        list-style-type: none;
+    }
+    ul.mapsList li {
+        display: block;
+        float: left;
+    }
+    .mapsList_prev{
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+    }
+    </style>
+  </head>
+  <body onload="draw();">
+    <div class="options">
+        <ul class="mapsList">
+            <li>
+                <div class="mapsList_prev"><img src="testMap_prev.jpg"/></div><p>Тестовая карта №1</p><button id="loadMap1">Начать</button>
+            </li>
+            <li>
+                <div class="mapsList_prev"><img src="testMap2_prev.jpg"/></div><p>Тестовая карта №2</p><button id="loadMap2">Начать</button>
+            </li>
+        </ul>
+        <div style="clear: both"></div>
+    </div>
+    <div class="make-your-route">
+        <div class="b-canvas-wrapper">
+            <canvas id="map" width="1010" height="615"></canvas>
+            <canvas id="course" width="1010" height="615"></canvas>
+            <canvas id="path" width="1010" height="615"></canvas>
+        </div>
+        <div class="controlPanel">
+            <button id="showMap">Show map</button>
+        </div>
+    </div>
+  </body>
+</html>
